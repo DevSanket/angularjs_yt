@@ -9,8 +9,16 @@ export class TodoComponent implements OnInit {
 
   todo:string="these is Assignment 1";
   todoId:number = 1;
+  msg="";
+  button_disable = true;
 
-  constructor() { }
+  constructor() { 
+
+    setTimeout(() => {
+      this.button_disable = false;
+    },2000)
+
+  }
 
   ngOnInit(): void {
   }
@@ -19,4 +27,7 @@ export class TodoComponent implements OnInit {
     return this.todo;
   }
 
+  changeMsg(){
+    this.msg="Hey Message";
+  }
 }

@@ -1,1 +1,6 @@
-<p>my {{"Todo"}} is {{getMyTodo()}} with the id of {{todoId}}</p>
+<!-- <p>my {{"Todo"}} is {{getMyTodo()}} with the id of {{todoId}}</p> -->
+
+<button [disabled]="button_disable"
+(click)="changeMsg()"
+>Add Todo</button>
+<p>{{msg}}</p>
