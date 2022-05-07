@@ -1,6 +1,9 @@
 <!-- <p>my {{"Todo"}} is {{getMyTodo()}} with the id of {{todoId}}</p> -->
 
+
+<!-- <input type="text" (input)="onTextChange($event)" > -->
+<input type="text" [(ngModel)]="msg">
 <button [disabled]="button_disable"
 (click)="changeMsg()"
 >Add Todo</button>
-<p>{{msg}}</p>
+<p>{{todo}}</p>

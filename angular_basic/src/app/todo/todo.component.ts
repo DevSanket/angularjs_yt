@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TodoComponent implements OnInit {
 
-  todo:string="these is Assignment 1";
+  todo:string="";
   todoId:number = 1;
   msg="";
   button_disable = true;
@@ -28,6 +28,11 @@ export class TodoComponent implements OnInit {
   }
 
   changeMsg(){
-    this.msg="Hey Message";
+    this.todo=this.msg;
+  }
+
+  onTextChange(event:Event){
+     this.msg=(<HTMLInputElement>event.target).value;
+      
   }
 }
