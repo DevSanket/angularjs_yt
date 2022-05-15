@@ -2,8 +2,8 @@
 
 
 <!-- <input type="text" (input)="onTextChange($event)" > -->
-<input type="text" [(ngModel)]="msg">
-<button [disabled]="button_disable"
+<input type="text"   class="form-control m-2"  [(ngModel)]="msg">
+<button class="btn btn-primary m-2" [disabled]="button_disable"
 (click)="changeMsg()"
 >Add Todo</button>
 <p>{{todo}}</p>
