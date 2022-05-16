@@ -3,21 +3,29 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-todo',
   templateUrl: './todo.component.html',
-  styleUrls: ['./todo.component.css']
+  // styleUrls: ['./todo.component.css']
+  styles:[
+    `
+      .Running{
+        color : #fff;
+      }
+    `
+  ]
 })
 export class TodoComponent implements OnInit {
 
   todo:string="";
-  todoId:number = 1;
+  todoId = "Running";
   msg="";
-  button_disable = true;
+  todo_msg = false;
+
+  myData = ["hi","hit","goal"];
+ 
 
   constructor() { 
-
-    setTimeout(() => {
-      this.button_disable = false;
-    },2000)
-
+     
+    this.todoId = Math.random() > 0.5 ? "Running" : "Pending";
+ 
   }
 
   ngOnInit(): void {
@@ -28,11 +36,17 @@ export class TodoComponent implements OnInit {
   }
 
   changeMsg(){
+    this.todoId = Math.random() > 0.5 ? "Running" : "Pending";
     this.todo=this.msg;
+    this.todo_msg=true;
   }
 
   onTextChange(event:Event){
      this.msg=(<HTMLInputElement>event.target).value;
       
+  }
+
+  getColor(){
+    return this.todoId === "Running" ? "green" : "yellow";
   }
 }

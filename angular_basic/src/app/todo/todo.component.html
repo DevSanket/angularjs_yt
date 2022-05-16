@@ -3,7 +3,21 @@
 
 <!-- <input type="text" (input)="onTextChange($event)" > -->
 <input type="text"   class="form-control m-2"  [(ngModel)]="msg">
-<button class="btn btn-primary m-2" [disabled]="button_disable"
+<button class="btn btn-primary m-2"
 (click)="changeMsg()"
 >Add Todo</button>
-<p>{{todo}}</p>
+<p *ngIf="todo_msg"
+[ngStyle]="{backgroundColor : getColor()}"
+[ngClass]="{Running:todoId === 'Running'}"
+>Todo is Created {{todo}}</p>
+
+<p *ngFor="let data of myData">
+   todo 
+</p>
+
+//ngIf
+//else
+//ngStyle
+//ngClass
+//ngFor
+
