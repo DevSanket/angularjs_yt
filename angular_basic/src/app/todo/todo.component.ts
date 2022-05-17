@@ -3,28 +3,27 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-todo',
   templateUrl: './todo.component.html',
-  // styleUrls: ['./todo.component.css']
-  styles:[
-    `
-      .Running{
-        color : #fff;
-      }
-    `
-  ]
+  styleUrls: ['./todo.component.css']
+  // styles:[
+  //   `
+  //     .Running{
+  //       color : #fff;
+  //     }
+  //   `
+  // ]
 })
 export class TodoComponent implements OnInit {
 
   todo:string="";
-  todoId = "Running";
   msg="";
   todo_msg = false;
 
-  myData = ["hi","hit","goal"];
+  myData:String[] = [];
  
 
   constructor() { 
      
-    this.todoId = Math.random() > 0.5 ? "Running" : "Pending";
+  
  
   }
 
@@ -36,9 +35,11 @@ export class TodoComponent implements OnInit {
   }
 
   changeMsg(){
-    this.todoId = Math.random() > 0.5 ? "Running" : "Pending";
     this.todo=this.msg;
-    this.todo_msg=true;
+    this.myData.push(this.todo);
+    this.msg="";
+    // this.todo_msg=true;
+
   }
 
   onTextChange(event:Event){
@@ -46,7 +47,7 @@ export class TodoComponent implements OnInit {
       
   }
 
-  getColor(){
-    return this.todoId === "Running" ? "green" : "yellow";
-  }
+  // getColor(){
+  //   return this.todoId === "Running" ? "green" : "yellow";
+  // }
 }

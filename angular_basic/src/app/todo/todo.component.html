@@ -6,18 +6,22 @@
 <button class="btn btn-primary m-2"
 (click)="changeMsg()"
 >Add Todo</button>
-<p *ngIf="todo_msg"
+<!-- <p *ngIf="todo_msg"
 [ngStyle]="{backgroundColor : getColor()}"
 [ngClass]="{Running:todoId === 'Running'}"
->Todo is Created {{todo}}</p>
+>Todo is Created {{todo}}</p> -->
 
-<p *ngFor="let data of myData">
+<!-- <p *ngFor="let data of myData">
    todo 
-</p>
-
+</p> -->
+<!-- 
 //ngIf
 //else
 //ngStyle
 //ngClass
-//ngFor
+//ngFor -->
 
+<p *ngFor="let data of myData; let i = index"
+[ngStyle]="{backgroundColor : i >= 3 ? 'yellow' : 'green'}"
+[ngClass]="{'white-text': i < 3}" 
+>{{i}} of {{data}}</p>
